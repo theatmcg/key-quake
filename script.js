@@ -1,3 +1,5 @@
+const { createSecretKey } = require("crypto");
+
 let audioClips = 0;
 let clips = [];
 let isClipSelected = true;
@@ -10,7 +12,6 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         audio: true,
     })
     
-    // Success callback
     .then((stream) => {
         const mediaRecorder = new MediaRecorder(stream);
 
@@ -31,11 +32,19 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             const blob = new Blob(audioBlobs, { type: "audio/ogg; codecs=opus" });
             const audioURL = window.URL.createObjectURL(blob);
         
-            srcElement = document.createElement("source");
-            srcElement.src = audioURL;
-            srcElement.type = "audio/ogg";
+            audioElement = document.createElement("source");
+            audioElement.src = audioURL;
+            audioElement.type = "audio/ogg";
 
-            $('.audio-container').append(srcElement);
+            $('.audio-container').append(audioElement);
+
+            CreateClip();
+
+            clipElement = document.createElement("div");
+            clipElement.class = "clip";
+            clipElement.hiddenURL = audioURL;
+
+            $('.clip-section').append(clipElement);
         }
         
         function StartRecording() {
@@ -57,7 +66,6 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         }
     })
     
-    // Error callback
     .catch((err) => {
         console.error(`The following getUserMedia error occurred: ${err}`);
     });
@@ -71,7 +79,12 @@ function CreateClip(clipName, url) {
         url: url,
     };
 
-    return clip;l
+    return clip;
+}
+
+// make the record button disabled by default
+if (!nameFilled) {
+    $("#record-button").addClass("disabled-button");
 }
 
 $("#clip-name-input").on("input", () => {
@@ -81,7 +94,9 @@ $("#clip-name-input").on("input", () => {
         nameFilled = true;
     }
 
-    if (nameFilled) {
-        $("#record-button").css('disabled', true);
+    if (!nameFilled) {
+        $("#record-button").addClass("disabled-button");
+    } else {
+        $("#record-button").removeClass("disabled-button");
     }
 })

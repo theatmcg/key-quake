@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="icon" type="image/x-icon" href="assets/images/quake.ico">
+        <!-- <link rel="icon" type="image/x-icon" href="assets/images/quake.ico"> -->
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
@@ -18,20 +18,20 @@
         <div class="center-section">
             <section class="recording-section">
                 <div class="button-section">
-                    <input class="button" id="clip-name-input" placeholder="clip name..."></input>
+                    <input class="button" id="clip-name-input" placeholder="- rename clip -"></input>
                     <div class="button" id="record-button" style="margin-left: 0.5rem;">Record</div>
                     <div class="button" id="stop-button" style="margin-left: 0.5rem;">Stop</div>
                 </div>
                 <br>
                 <div class="audio-section">
                     <div class="audio-details">
-                        - no recording -
-                        <i class="fa-solid fa-pen-to-square" id="rename-button"></i> 
+                        <div class="audio-name">- empty clip -</div>
+                        <i class="fa-solid fa-pen-to-square" id="rename-button"></i>
                     </div>
                     <audio class="audio-container" controls></audio>
                 </div>
                 <br>
-                <div class="clip-section">
+                <div class="clip-section"></div>
                 </div>
             </section>
         </div>
