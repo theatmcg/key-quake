@@ -58,8 +58,30 @@ body {
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8);
 }
 
-#clip-input-button {
-    outline: 2px solid white;
+#name-input {
+    outline: 1px solid white;
+    outline-offset: 2px;
+}
+
+#name-input {
+    border: none;
+    text-align: center;
+}
+
+#name-input:focus::placeholder {
+    color: transparent;
+}
+
+#name-input:active::placeholder {
+    color: transparent;
+}
+
+#name-input:hover::placeholder {
+    color: transparent;
+}
+
+#name-input::placeholder {
+    color: black;
 }
 
 #record-button {
@@ -89,6 +111,12 @@ body {
     height: 38px;
 }
 
+#audio-name {
+    color: black;
+    border: none;
+    text-align: center;
+}
+
 .audio-container {
     display: inline-block;
     height: 38px;
@@ -104,6 +132,7 @@ body {
 }
 
 .clip {
+    border: none;
     cursor: pointer;
     margin: .25rem;
     border-radius: 0.25rem;
@@ -136,17 +165,4 @@ body {
     color: black;
     transform: scale(102%);
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1))
-}
-
-#clip-name-input {
-    border: none;
-    text-align: center;
-}
-
-#clip-name-input:hover::placeholder {
-    color: transparent;
-}
-
-#clip-name-input::placeholder {
-    color: black;
 }
