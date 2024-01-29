@@ -1,0 +1,10 @@
+host jquery instead of pulling it from a server/cdn
+host bootstrap instead of pulling it from a server/cdn
+basic UI for recording audio
+basic UI for showing audio clips and able to switch them out
+learn about promises in javascript
+learn about audio visualization / frequency visualization with javascript
+learn how to incorporate rust OR react
+use a php framework
+set up a database for accounts and passwords
+learn basic website security
